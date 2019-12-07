@@ -13,9 +13,10 @@ Implementation of variants of Huffman encoding, a lossless data compression algo
 
 Takes in a file name, compresses the file, and outputs the compressed file with a codemap header.
 
-####Usage:####
+Usage:
+======
 ```java
-java Zipper zipper [target] [destination]
+java Schubs [target] [destination]
 ```
 
 - Target: The name of the file, folder to be compressed
@@ -28,10 +29,12 @@ should reproduce the original file.
 
 ####Usage:####
 ```java
-java Zipper unzipper [target] [destination]
+java Deschubs [target] [destination]
 ```
 
 - Target: The name of the file, folder to be decompressed
 - Destination: The name of the decompressed file (to be created)
+
+ 
 
  
