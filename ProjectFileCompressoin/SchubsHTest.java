@@ -104,9 +104,9 @@ public class SchubsTest extends TestCase {
 
 		/* Files */
 		File file1 = createFile("folderWithFiles/folder1/file1.txt", "");
-		File file2 = createFile("folderWithFiles/folder1/file2.txt", "blabla");
+		File file2 = createFile("folderWithFiles/folder1/file2.txt", "blee");
 		File file3 = createFile("folderWithFiles/folder2/file3.txt",
-				"Hello my name is Mourad");
+				"Hello World!");
 
 		/* encode */
 		Schubs.encodeZip(main.getName(), "folderWithFiles.txt.zip");
@@ -163,4 +163,5 @@ public class SchubsTest extends TestCase {
 		copyFile3.delete();
 	}
 }
+
 
