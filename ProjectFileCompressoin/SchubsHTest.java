@@ -47,7 +47,7 @@ public class SchubsTest extends TestCase {
 		writeToFile("this is a test", f.getAbsolutePath());
 
 		Schubs.encodeZip(f.getAbsolutePath(), "singleFile.txt.zip");
-		Schubs.decodeZip("singleFile.txt.zip", "singleFile-copy.txt");
+		Deschubs.decodeZip("singleFile.txt.zip", "singleFile-copy.txt");
 
 		// check if these two files are the same
 		equals = isSameFile(new FileCharIterator("singleFile-copy.txt"),
@@ -64,7 +64,7 @@ public class SchubsTest extends TestCase {
 			f.mkdir();
 
 		Schubs.encodeZip(f.getName(), "emptyFolder.txt.zip");
-		Schubs.decodeZip("emptyFolder.txt.zip", "emptyFolder-copy");
+		Deschubs.decodeZip("emptyFolder.txt.zip", "emptyFolder-copy");
 
 		// check if these two files are the same
 		File emptyFolder = new File("emptyFolder-copy");
@@ -111,7 +111,7 @@ public class SchubsTest extends TestCase {
 		/* encode */
 		Schubs.encodeZip(main.getName(), "folderWithFiles.txt.zip");
 		/* decode */
-		Schubs.decodeZip("folderWithFiles.txt.zip", "folderWithFiles-copy");
+		Deschubs.decodeZip("folderWithFiles.txt.zip", "folderWithFiles-copy");
 
 		/* check that the folders exist */
 
@@ -163,3 +163,4 @@ public class SchubsTest extends TestCase {
 		copyFile3.delete();
 	}
 }
+
