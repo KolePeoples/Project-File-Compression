@@ -12,7 +12,7 @@ import java.util.Queue;
  * https://github.com/m2omou/huffman-encoding
  */
 
-public class Schubs {
+public class SchubsH {
 
 	private static int limit = 0;
 
@@ -246,9 +246,9 @@ public class Schubs {
 			String name = file.getName();
 
 			if (file.getBof() == -1) {
-				if ((name.contains("/") && !name
-						.substring(0, name.length() - 1).contains("/"))
-						|| !name.contains("/")) {
+				if ((name.contains("-") && !name
+						.substring(0, name.length() - 1).contains("-"))
+						|| !name.contains("-")) {
 					return name;
 				}
 			}
@@ -264,11 +264,11 @@ public class Schubs {
 			String name = file.getName().replace(rootFolder, destination);
 
 			if (file.getBof() == -1) {
-				String[] folders = name.split("/");
+				String[] folders = name.split("-");
 				String fdr = "";
 
 				for (int i = 0; i < folders.length; i++) {
-					fdr += folders[i] + "/";
+					fdr += folders[i] + "-";
 					File f = new File(fdr);
 
 					if (!f.exists())
@@ -325,15 +325,16 @@ public class Schubs {
 
 	public static void main(String[] args) {
 		if (args.length < 3) {
-			System.out.println("Usage: [zipper/unzipper] target destination");
+			System.out.println("Usage: [Schubs/Deschubs] target destination");
 			return;
 		}
 
-		if (args[0].equals("zipper"))
+		if (args[0].equals("Schubs"))
 			encodeZip(args[1], args[2]);
-		else if (args[0].equals("unzipper"))
+		else if (args[0].equals("Deschubs"))
 			decodeZip(args[1], args[2]);
 		else
-			System.out.println("Usage: [zipper/unzipper] target destination");
+			System.out.println("Usage: [Schubs/Deschubs] target destination");
 	}
 }
+
